@@ -49,13 +49,6 @@
   - [To edit the Git config file manually:](#to-edit-the-git-config-file-manually)
 - [🔄 Basic Git Workflow](#-basic-git-workflow)
   - [🔍 Check Git Status](#-check-git-status)
-- [🔄 Git File States Explained](#-git-file-states-explained)
-  - [1. 🟡 **Untracked Files**](#1--untracked-files)
-    - [✅ What to do:](#-what-to-do)
-  - [2. 🔴 **Unstaged (Modified) Files**](#2--unstaged-modified-files)
-    - [✅ What to do:](#-what-to-do-1)
-  - [3. 🟢 **Staged Files**](#3--staged-files)
-    - [✅ What to do:](#-what-to-do-2)
   - [🧠 Summary Table](#-summary-table)
   - [➕ Stage Changes](#-stage-changes)
   - [✅ Commit Changes](#-commit-changes)
@@ -66,13 +59,20 @@
   - [Switch to an Existing Branch](#switch-to-an-existing-branch)
 - [🔀 Merging](#-merging)
   - [Merge a Branch into Current](#merge-a-branch-into-current)
-- [📥 Pull Updates from Remote](#-pull-updates-from-remote)
+- [📥 Different Ways of Pulling Updates from Remote](#-different-ways-of-pulling-updates-from-remote)
+  - [1. `git pull`](#1-git-pull)
+  - [2. `git fetch` + `git merge`](#2-git-fetch--git-merge)
+  - [3. `git fetch` + `git rebase`](#3-git-fetch--git-rebase)
+    - [3b. `git pull --rebase`](#3b-git-pull---rebase)
+  - [4. `git clone` (if starting fresh)](#4-git-clone-if-starting-fresh)
+  - [5. Using `git reset --hard origin/main` ⚠️](#5-using-git-reset---hard-originmain-️)
 - [📂 Clone an Existing Repository](#-clone-an-existing-repository)
 - [📜 View Commit History](#-view-commit-history)
 - [🧹 Undoing Changes](#-undoing-changes)
   - [Unstage a File](#unstage-a-file)
   - [Discard Unstaged Changes](#discard-unstaged-changes)
   - [Amend Last Commit](#amend-last-commit)
+  - [Temporarily Saving Work](#temporarily-saving-work)
 - [🧠 Useful Git Aliases (Optional)](#-useful-git-aliases-optional)
 
 ---
@@ -185,15 +185,10 @@ git status
 
 See changes (staged/unstaged/untracked files).
 <details>
-     <summary>What are staged, unstaged, and untracked files</summary>
+     <summary style="font-weight:bold;">What are staged, unstaged, and untracked files</summary>
 
 ---
-
-## 🔄 Git File States Explained
-
-Git tracks files in your project through **three main states**:
-
-### 1. 🟡 **Untracked Files**
+1. 🟡 **Untracked Files**
 
 > Files that are **not yet being tracked by Git**.
 
@@ -222,7 +217,7 @@ Untracked files:
         newfile.txt
 ```
 
-#### ✅ What to do:
+✅ What to do:
 
 ```bash
 git add newfile.txt  # Moves it to staged state
@@ -230,7 +225,7 @@ git add newfile.txt  # Moves it to staged state
 
 ---
 
-### 2. 🔴 **Unstaged (Modified) Files**
+2. 🔴 **Unstaged (Modified) Files**
 
 > Files that **Git is tracking**, but you’ve **made changes** to them since the last commit — and **haven’t staged** those changes yet.
 
@@ -250,7 +245,7 @@ Changes not staged for commit:
         modified: index.js
 ```
 
-#### ✅ What to do:
+✅ What to do:
 
 ```bash
 git add index.js  # Stages the modified file
@@ -258,7 +253,7 @@ git add index.js  # Stages the modified file
 
 ---
 
-### 3. 🟢 **Staged Files**
+3. 🟢 **Staged Files**
 
 > Files that are ready to be **committed**. You've told Git, "These are the changes I want to include in the next commit."
 
@@ -276,7 +271,7 @@ Changes to be committed:
         modified: file.txt
 ```
 
-#### ✅ What to do:
+✅ What to do:
 
 ```bash
 git commit -m "Update file.txt"
@@ -366,12 +361,92 @@ Resolve conflicts if prompted.
 
 ---
 
-## 📥 Pull Updates from Remote
+## 📥 Different Ways of Pulling Updates from Remote
+### 1. `git pull` 
+- What it does
+  - Equivalent to `git fetch` followed by `git merge`.
+- Use case:
+  - You want to automatically fetch and merge the latest changes from a remote branch into your current local branch.
+- Pros: 
+  - Simple and convenient
+- Cons:
+  - Can create messy merge commits if you're not careful. You have less control.
 
 ```bash
 git pull origin main
 ```
 
+### 2. `git fetch` + `git merge`
+- What it does
+  - `git fetch` downloads changes from the remote but doesn't apply them.
+  - `git merge origin/main` (or your branch name) then merges those changes into your local branch
+- Use case:
+  - When you want to review the changes before merging.
+- Pros: 
+  - Safer then pull, more transparent.
+- Cons:
+  - Slightly more work, requires two commands.
+```bash
+git fetch origin main
+
+git merge origin/main
+```
+
+### 3. `git fetch` + `git rebase`
+- What it does: 
+  - Reapplies your local commits on top of what's fetched.
+- Use case: 
+  - You want a clean linear history without merge commits.
+- Pros: 
+  - Cleaner history, preferred in collaborative workflows.
+- Cons: 
+  - Can be risky if you rebase public branches—rewriting history.
+```bash
+git fetch origin main
+
+git rebase origin/main
+```
+
+#### 3b. `git pull --rebase`
+- What it does:
+  - Shortcut that performs git fetch followed by git rebase on your current branch.
+- Use case:
+  - Cleanly update your branch with remote changes in one step.
+- Pros:
+  - Convenient and cleaner history without merge commits.
+- Cons:
+  - Less control than using separate fetch and rebase.
+
+```bash
+git pull --rebase origin main
+```
+🔍 Equivalent to:
+
+```bash
+git fetch origin main
+git rebase origin/main
+```
+
+### 4. `git clone` (if starting fresh)
+- What it does: 
+  - Copies an entire remote repository to your local machine.
+- Use case: 
+  - First-time setup or when you want a clean slate.
+- Pros: 
+  - Easy starting point.
+- Cons: 
+  - Not useful for updating an already cloned repo.
+
+
+### 5. Using `git reset --hard origin/main` ⚠️
+- What it does: 
+  - Resets your local branch to exactly match the remote.
+- Use case: 
+  - When you want to discard all local changes and force sync with remote.
+- Pros: 
+  - Fast and clean.
+- Cons: 
+  - Destructive—you lose any uncommitted or local changes.
 ---
 
 ## 📂 Clone an Existing Repository
@@ -409,6 +484,15 @@ git checkout -- filename
 
 ```bash
 git commit --amend
+```
+
+### Temporarily Saving Work
+Useful for temporarily saving changes without committing.
+
+```bash
+git stash             # Save local modifications
+git stash apply       # Reapply stashed changes
+git stash list        # View all stashes
 ```
 
 ---
