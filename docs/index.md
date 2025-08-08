@@ -22,7 +22,7 @@
 <img src="https://img.shields.io/github/last-commit/bensonngu/git-command?style=for-the-badge&logo=git&logoColor=white&color=8A2BE2" alt="Last Commit">
 <p>
 
-A concise guide demonstrating the fundamental Git commands and typical workflow for managing repositories on a local machine.
+A concise guide demonstrating the fundamental Git commands and typical workflow for managing repositories on a local machine.  
 
 ## 🧭 Quick Links
 
@@ -42,4 +42,5 @@ A concise guide demonstrating the fundamental Git commands and typical workflow 
 - 🧠 [Useful Git Aliases](extras/aliases.md)
 
 !!! tip "Copy buttons"
+
     Every code block has a copy button on the right—use it on mobile too.
