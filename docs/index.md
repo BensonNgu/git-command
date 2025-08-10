@@ -1,3 +1,12 @@
+---
+title: Command Guide
+layout: default
+nav_order: 1
+---
+
+# Git Command Guide
+A concise guide demonstrating the fundamental Git commands and typical workflow for managing repositories on a local machine.
+
 <p align="center">
     <h1 align="center"><img src="https://img.shields.io/badge/Git-F05032.svg?style=for-the-badge&logo=Git&logoColor=white" alt="Git">
  Command Guide</h1>
@@ -21,8 +30,6 @@
 <!-- Last Commit -->
 <img src="https://img.shields.io/github/last-commit/bensonngu/git-command?style=for-the-badge&logo=git&logoColor=white&color=8A2BE2" alt="Last Commit">
 <p>
-
-A concise guide demonstrating the fundamental Git commands and typical workflow for managing repositories on a local machine.
 
 ## 🧭 Quick Links
 
