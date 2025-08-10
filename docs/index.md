@@ -8,10 +8,6 @@ nav_order: 1
 A concise guide demonstrating the fundamental Git commands and typical workflow for managing repositories on a local machine.
 
 <p align="center">
-    <h1 align="center"><img src="https://img.shields.io/badge/Git-F05032.svg?style=for-the-badge&logo=Git&logoColor=white" alt="Git">
- Command Guide</h1>
-</p>
-<p align="center">
 <!-- Stars -->
 <img src="https://img.shields.io/github/stars/bensonngu/git-command?style=for-the-badge&color=FFD700" alt="Repo Stars">
 
