@@ -1,7 +1,12 @@
-<p align="center">
-    <h1 align="center"><img src="https://img.shields.io/badge/Git-F05032.svg?style=for-the-badge&logo=Git&logoColor=white" alt="Git">
- Command Guide</h1>
-</p>
+---
+title: Command Guide
+layout: default
+nav_order: 1
+---
+
+# Git Command Guide
+A concise guide demonstrating the fundamental Git commands and typical workflow for managing repositories on a local machine.
+
 <p align="center">
 <!-- Stars -->
 <img src="https://img.shields.io/github/stars/bensonngu/git-command?style=for-the-badge&color=FFD700" alt="Repo Stars">
@@ -22,24 +27,42 @@
 <img src="https://img.shields.io/github/last-commit/bensonngu/git-command?style=for-the-badge&logo=git&logoColor=white&color=8A2BE2" alt="Last Commit">
 <p>
 
-A concise guide demonstrating the fundamental Git commands and typical workflow for managing repositories on a local machine.  
+---
 
 ## 🧭 Quick Links
 
-- 🧾 [Initialize & Configure](setup/init.md)
-- ⚙️ [Configure Git (First Time Only)](setup/config.md)
-- 🔍 [View Current Git Settings](setup/view-settings.md)
-- 🛠 [Other Useful Git Settings](setup/other-settings.md)
-- 🧽 [Remove or Edit a Git Setting](setup/edit-settings.md)
-- 🔄 [Basic Git Workflow](workflow/basic.md)
-- 🌐 [Remote Repository Setup](remote/setup.md)
-- 🌿 [Branching](branching/branching.md)
-- 🔀 [Merging](merging/merging.md)
-- 📥 [Pull Strategies](remote/pull-strategies.md)
-- 📂 [Clone an Existing Repository](remote/clone.md)
-- 📜 [View Commit History](history/log.md)
-- 🧹 [Undoing Changes](undo/undo.md)
-- 🧠 [Useful Git Aliases](extras/aliases.md)
+<div class="grid cards" markdown>
+
+-   :page_facing_up: **Setup**
+    ---
+    [Initialize & Configure](setup/init.md)  
+    [Configure Git](setup/config.md)  
+    [View Settings](setup/view-settings.md)  
+    [Other Settings](setup/other-settings.md)  
+    [Edit Settings](setup/edit-settings.md)
+
+-   :arrows_counterclockwise: **Workflow**
+    ---
+    [Basic Git Workflow](workflow/basic.md)  
+    [Remote Setup](remote/setup.md)  
+    [Pull Strategies](remote/pull-strategies.md)  
+    [Clone Repo](remote/clone.md)
+
+-   :herb: **Branches & Merges**
+    ---
+    [Branching](branching/branching.md)  
+    [Merging](merging/merging.md)
+
+-   :scroll: **History & Undo**
+    ---
+    [View Commit History](history/log.md)  
+    [Undoing Changes](undo/undo.md)
+
+-   :brain: **Extras**
+    ---
+    [Useful Git Aliases](extras/aliases.md)
+
+</div>
 
 !!! tip "Copy buttons"
 

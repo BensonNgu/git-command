@@ -1,0 +1,12 @@
+title: Git Command Guide
+description: Concise, mobile-friendly Git workflow guide
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+
+# If your site is at https://<user>.github.io/git-command/
+baseurl: "/git-command"
+url: "https://bensonngu.github.io"
+
+# Build from /docs for project pages
+collections_dir: ""
