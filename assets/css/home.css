@@ -60,8 +60,8 @@
 .link-btn {
      display: inline-block;
      padding: 0.35rem 0.7rem;
-     background: var(--accent-50);
-     color: var(--panel);
+     background: var(--panel);
+     color: var(--text);
      border: 1px solid var(--border);
      border-radius: 999px;
      /* pill shape */

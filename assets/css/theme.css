@@ -19,6 +19,10 @@
      --link: #2563eb;
      --link-hover: #1d4ed8;
 
+     /* link buttons */
+     --link-btn-bg: #f0f9ff;
+     --link-btn-border: #bfdbfe;
+
      /* code */
      --code-bg: #f8fafc;
      --code-border: #e2e8f0;
@@ -41,21 +45,4 @@
           --code-bg: #0f172a;
           --code-border: #1f2a44;
      }
-}
-
-/* optional manual override: <html data-theme="dark"> */
-html[data-theme="dark"] {
-     --bg: #0b0f19;
-     --text: #e5e7eb;
-     --muted: #9ca3af;
-     --border: #253046;
-
-     --panel: #111827;
-     --panel-border: #1f2937;
-
-     --link: #93c5fd;
-     --link-hover: #bfdbfe;
-
-     --code-bg: #0f172a;
-     --code-border: #1f2a44;
 }
