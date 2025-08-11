@@ -1,3 +1,9 @@
+---
+layout: page
+permalink: /history/log
+title: View Commit History
+---
+
 # 📜 View Commit History
 
 ## Basic Log

@@ -1,0 +1,44 @@
+---
+layout: wrapper
+---
+
+<div class="hero">
+     <img src="https://img.shields.io/badge/Git-F05032.svg?style=for-the-badge&logo=Git&logoColor=white" alt="Git"
+                                                                                                         style="vertical-align:middle;">
+     <h1 style="margin:.25rem 0 0">{{ site.title | default: "Git Command Guide" }}</h1>
+     <p>A concise guide to everyday Git: setup, workflow, remotes, branching, merging, history, and undo.</p>
+</div>
+
+{% if site.data.badges %}
+<div class="badges">
+     {% for badge in site.data.badges %}
+     <img src="{{ badge.url }}" alt="{{ badge.name }}">
+     {% endfor %}
+</div>
+{% endif %}
+
+<h2>🧭 Quick Links</h2>
+
+{% if site.data.nav %}
+<div class="card-grid">
+     {% for section in site.data.nav %}
+     {% if section.title != "Navigation" %}
+     <div class="card">
+          <h3>{{ section.title }}</h3>
+          <p>
+               {% for it in section.items %}
+          <div class="link-buttons">
+               <a class="link-btn" href="{{ it.url | relative_url }}">{{ it.label }}</a>{% unless forloop.last %} {%
+               endunless %}
+          </div>
+          {% endfor %}
+          </p>
+     </div>
+     {% endif %}
+     {% endfor %}
+</div>
+{% else %}
+<p><em>No navigation defined. Add sections to <code>_data/nav.yml</code>.</em></p>
+{% endif %}
+
+{{ content }}

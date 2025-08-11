@@ -1,0 +1,10 @@
+a {
+     font-family: Arial, sans-serif;
+     line-height: 1.6;
+     color: var(--link);
+     text-decoration: none;
+}
+
+a:hover {
+     color: var(--link-hover);
+}

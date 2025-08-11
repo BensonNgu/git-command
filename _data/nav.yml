@@ -1,0 +1,37 @@
+- title: Navigation
+  items:
+    - { label: Home, url: / }
+    - { label: About, url: /about }
+
+- title: Quick Start
+  items:
+    - { label: Basic Workflow, url: /workflow/basic }
+
+- title: Setup
+  items:
+    - { label: Initialize,              url: /setup/init }
+    - { label: Configure (First Time),  url: /setup/config }
+    - { label: View Settings,           url: /setup/view-settings }
+    - { label: Other Settings,          url: /setup/other-settings }
+    - { label: Remove/Edit Setting,     url: /setup/edit-settings }
+
+- title: Remotes
+  items:
+    - { label: Remote Setup,            url: /remote/setup }
+    - { label: Pull Strategies,         url: /remote/pull-strategies }
+    - { label: Clone,                   url: /remote/clone }
+
+- title: Branches & Merge
+  items:
+    - { label: Branching,               url: /branching }
+    - { label: Merging,                 url: /merging }
+
+- title: History & Undo
+  items:
+    - { label: View Log,                url: /history/log }
+    - { label: Undoing Changes,         url: /undo }
+
+- title: Extras
+  items:
+    - { label: Aliases,                 url: /extras/aliases }
+    - { label: Staged/Unstaged/Untracked,url: /extras/staged-unstaged-untracked }

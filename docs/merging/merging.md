@@ -1,3 +1,9 @@
+---
+layout: page
+permalink: /merging
+title: Merging
+---
+
 # 🔀 Merging
 
 Merging combines changes from one branch into the branch you’re currently on.

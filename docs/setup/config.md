@@ -1,3 +1,9 @@
+---
+layout: page
+permalink: /setup/config
+title: Configure Git
+---
+
 # ⚙️ Configure Git (First Time Only)
 ## ✅ Set Name & Email
 These are **essential** for commit history:

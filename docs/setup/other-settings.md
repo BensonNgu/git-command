@@ -1,3 +1,9 @@
+---
+layout: page
+permalink: /setup/other-settings
+title: Other Useful Git Settings
+---
+
 # 🛠 Other Useful Git Settings
 ## Default Text Editor (optional)
 Sets which editor opens when Git needs you to type a message (e.g., for merge commits).

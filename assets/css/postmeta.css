@@ -1,0 +1,13 @@
+.post-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.post-meta time {
+  font-weight: 500;
+}
+
+.post-meta::before {
+  content: "📅 ";
+}

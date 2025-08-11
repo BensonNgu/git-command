@@ -1,3 +1,9 @@
+---
+layout: page
+permalink: /setup/init
+title: Initialize a Git Repository
+---
+
 # 🧾 Initialize a Git Repository
 
 ```bash

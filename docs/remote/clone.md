@@ -1,3 +1,8 @@
+---
+layout: page
+permalink: /remote/clone
+title: Clone an Existing Repository
+---
 # 📂 Clone an Existing Repository
 
 ## 1. Standard HTTPS Clone *(Most Common)*

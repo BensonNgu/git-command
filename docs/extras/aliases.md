@@ -1,3 +1,9 @@
+---
+layout: page
+permalink: /extras/aliases
+title: Useful Git Aliases
+---
+
 # 🧠 Useful Git Aliases
 
 Aliases let you create short commands for commonly used Git operations.

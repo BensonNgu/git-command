@@ -1,0 +1,31 @@
+<footer class="site-footer">
+  <script>
+    fetch('https://api.github.com/repos/bensonngu/git-command/commits?per_page=1')
+      .then(res => res.json())
+      .then(data => {
+        const lastCommitDate = new Date(data[0].commit.author.date);
+        document.getElementById('last-commit').textContent =
+          lastCommitDate.toLocaleString();
+      });
+  </script>
+
+  <div class="footer-content">
+    <p class="footer-title">{{ site.title }}</p>
+    <p class="footer-description">{{ site.description }}</p>
+
+    <p class="footer-contact">
+      📧 <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </p>
+
+    <p class="footer-links">
+      🌐 <a target="_blank" href="{{ site.github.owner_website | default: site.baseurl }}">Website</a> |
+      💻 <a target="_blank" href="https://github.com/{{ site.github_username }}">GitHub</a>
+    </p>
+
+    <p class="footer-owner">
+      &copy; {{ "now" | date: "%Y" }} {{ site.github.owner_name | default: site.github_username }}
+    </p>
+
+    <p>Last update on <span id="last-commit">Loading...</span></p>
+  </div>
+</footer>

@@ -1,0 +1,26 @@
+[
+     {
+          "name": "Repo Stars",
+          "url": "https://img.shields.io/github/stars/bensonngu/git-command?style=for-the-badge&color=FFD700"
+     },
+     {
+          "name": "Repo Forks",
+          "url": "https://img.shields.io/github/forks/bensonngu/git-command?style=for-the-badge&color=FF8C00"
+     },
+     {
+          "name": "Repo Watchers",
+          "url": "https://img.shields.io/github/watchers/bensonngu/git-command?style=for-the-badge&color=1E90FF"
+     },
+     {
+          "name": "Open Issues",
+          "url": "https://img.shields.io/github/issues/bensonngu/git-command?style=for-the-badge&color=DC143C"
+     },
+     {
+          "name": "License",
+          "url": "https://img.shields.io/github/license/bensonngu/git-command?style=for-the-badge&color=228B22"
+     },
+     {
+          "name": "Last Commit",
+          "url": "https://img.shields.io/github/last-commit/bensonngu/git-command?style=for-the-badge&logo=git&logoColor=white&color=8A2BE2"
+     }
+]

@@ -1,3 +1,8 @@
+---
+layout: page
+permalink: /branching
+title: Branching
+---
 # 🌿 Branching
 Branches let you work on features, fixes, or experiments **without affecting** the `main` branch.
 

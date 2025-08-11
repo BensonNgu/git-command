@@ -1,3 +1,8 @@
+---
+layout: page
+permalink: /remote/pull-strategies
+title: Different Ways of Pulling Updates from Remote
+---
 # 📥 Different Ways of Pulling Updates from Remote
 
 Keeping your local branch in sync with the remote ensures you’re working with the latest code.

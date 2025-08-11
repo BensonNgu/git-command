@@ -1,0 +1,29 @@
+{%- comment -%}
+Reusable tags include.
+
+Usage:
+  {% include tags.html items=page.categories link=true base="/categories/" %}
+Notes:
+  - Accepts an array OR a space-separated string.
+  - If `link` is true (default), each tag links to `base + slug`.
+  - Falls back to "Uncategorized" if nothing is provided.
+{%- endcomment -%}
+
+{%- assign raw = include.items | default: page.categories -%}
+
+{%- if raw and raw != empty -%}
+  {%- if raw.first -%}
+    {%- assign tags = raw -%}
+  {%- else -%}
+    {%- assign tags = raw | split: " " -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign tags = "Uncategorized" | split: "|" -%}
+{%- endif -%}
+
+<div class="tags">
+  {%- for tag in tags -%}
+    <span class="tag">{{ tag }}</span>
+  {%- endfor -%}
+</div>
+

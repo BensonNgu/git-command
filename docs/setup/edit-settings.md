@@ -1,3 +1,8 @@
+---
+layout: page
+permalink: /setup/edit-settings
+title: Remove or Edit a Git Setting
+---
 # 🧽 Remove or Edit a Git Setting
 ## To unset a setting
 Removes a specific config value from the chosen scope.

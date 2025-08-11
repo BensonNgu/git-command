@@ -1,0 +1,35 @@
+.site-footer {
+  background: var(--panel);
+  /* uses theme surface color */
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  /* muted text color */
+  border-top: 1px solid var(--panel-border);
+}
+
+.site-footer a {
+  color: var(--link);
+  /* theme link color */
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--link-hover);
+  /* theme hover link color */
+  text-decoration: underline;
+}
+
+.footer-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--text);
+  /* main text color */
+}
+
+.footer-description {
+  margin: 0.5rem 0;
+  font-style: italic;
+  color: var(--muted);
+}

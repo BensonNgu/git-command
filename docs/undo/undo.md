@@ -1,3 +1,9 @@
+---
+layout: page
+permalink: /undo
+title: Undoing Changes
+---
+
 # 🧹 Undoing Changes
 
 ## Unstage a File

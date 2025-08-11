@@ -1,3 +1,9 @@
+---
+layout: page
+permalink: /setup/view-settings
+title: View Current Git Settings
+---
+
 # 🔍 View Current Git Settings
 ## View All Git Config Settings (Global + Local + System)
 ```bash

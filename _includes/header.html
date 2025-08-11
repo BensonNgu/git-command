@@ -1,0 +1,86 @@
+<header class="site-header">
+    <a href="{{ '/' | relative_url }}" class="brand">
+        <h1>{{ site.title }}</h1>
+    </a>
+    <button class="nav-toggle" aria-label="Open navigation">☰</button>
+</header>
+
+<!-- Backdrop -->
+<div class="sidebar-backdrop" hidden></div>
+
+<!-- Off‑canvas sidebar -->
+<aside class="sidebar" aria-hidden="true" aria-label="Site navigation">
+    <button class="sidebar-close" aria-label="Close navigation">✕</button>
+
+    <nav class="nav">
+        {% comment %} Your existing accordion sections go here {% endcomment %}
+        {% for section in site.data.nav %}
+        {% assign has_active = false %}
+        {% for it in section.items %}
+        {% assign href = it.url | relative_url %}
+        {% if page.url == href %}{% assign has_active = true %}{% endif %}
+        {% endfor %}
+        <section class="nav-section">
+            <button class="nav-sec-toggle{% if has_active %} is-open{% endif %}" aria-expanded="{{ has_active }}">
+                <span class="nav-title">{{ section.title }}</span>
+                <span class="chev" aria-hidden="true">▸</span>
+            </button>
+            <ul class="nav-list{% if has_active %} is-open{% endif %}">
+                {% for it in section.items %}
+                {% assign href = it.url | relative_url %}
+                <li><a class="nav-link{% if page.url == href %} is-active{% endif %}" href="{{ href }}">{{ it.label
+                        }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endfor %}
+    </nav>
+</aside>
+
+<script>
+    (function () {
+        const body = document.body;
+        const sidebar = document.querySelector('.sidebar');
+        const backdrop = document.querySelector('.sidebar-backdrop');
+        const openBtn = document.querySelector('.nav-toggle');
+        const closeBtn = document.querySelector('.sidebar-close');
+
+        function openNav() {
+            body.classList.add('nav-open');
+            sidebar.setAttribute('aria-hidden', 'false');
+            backdrop.hidden = false;
+            // Fix height for any open accordion lists
+            document.querySelectorAll('.nav-list.is-open').forEach(l => { l.style.height = l.scrollHeight + 'px'; });
+        }
+        function closeNav() {
+            body.classList.remove('nav-open');
+            sidebar.setAttribute('aria-hidden', 'true');
+            backdrop.hidden = true;
+        }
+
+        openBtn.addEventListener('click', openNav);
+        closeBtn.addEventListener('click', closeNav);
+        backdrop.addEventListener('click', closeNav);
+        window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeNav(); });
+
+        // Accordion height handling (if you use the accordion)
+        document.querySelectorAll('.nav-section').forEach(sec => {
+            const btn = sec.querySelector('.nav-sec-toggle');
+            const list = sec.querySelector('.nav-list');
+            if (!btn || !list) return;
+
+            if (list.classList.contains('is-open')) list.style.height = list.scrollHeight + 'px';
+
+            btn.addEventListener('click', () => {
+                const open = btn.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', String(open));
+                list.classList.toggle('is-open', open);
+                list.style.height = open ? (list.scrollHeight + 'px') : 0;
+            });
+
+            list.addEventListener('transitionend', () => {
+                if (list.classList.contains('is-open')) list.style.height = 'auto';
+            });
+        });
+    })();
+</script>

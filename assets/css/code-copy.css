@@ -1,0 +1,37 @@
+pre {
+     position: relative;
+     background-color: var(--code-bg);
+     /* from theme.css */
+     color: var(--text);
+     padding: 8px;
+     border-radius: 6px;
+     min-height: 1.5rem;
+     border: 1px solid var(--code-border);
+     overflow-x: auto;
+}
+
+code {
+     font-family: "Google Sans Code", monospace;
+}
+
+.copy-btn {
+     position: absolute;
+     top: 6px;
+     right: 6px;
+     background: var(--muted);
+     border: 1px solid var(--border);
+     border-radius: 6px;
+     padding: 4px;
+     cursor: pointer;
+     color: var(--muted);
+     transition: all 0.2s ease;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.copy-btn:hover {
+     background: var(--accent);
+     color: white;
+     border-color: var(--accent-600);
+}

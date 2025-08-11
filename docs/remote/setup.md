@@ -1,3 +1,9 @@
+---
+layout: page
+permalink: /remote/setup
+title: Remote Repository Setup
+---
+
 # 🌐 Remote Repository Setup
 
 1. Create a new repo on GitHub.
