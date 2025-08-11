@@ -3,6 +3,10 @@
      padding: 2.5rem 0 1.25rem;
 }
 
+.hero img {
+     border-radius: 3px;
+}
+
 .hero h1 {
      margin: 0 0 .5rem;
      font-size: clamp(1.75rem, 3vw, 2.25rem);
@@ -20,6 +24,10 @@
      gap: .5rem;
      justify-content: center;
      margin: .75rem 0 1.5rem;
+}
+
+.badges img {
+     border-radius: 3px;
 }
 
 .quick-links {
