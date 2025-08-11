@@ -11,7 +11,7 @@ git status
 ```
 See changes (staged/unstaged/untracked files).
 
-[What are staged, unstaged, and untracked files](/extras/staged-unstaged-untracked)
+[What are staged, unstaged, and untracked files](/git-command/extras/staged-unstaged-untracked)
 
 🔎 View Differences Before Staging or Committing
 ```bash
