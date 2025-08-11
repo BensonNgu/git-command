@@ -49,6 +49,3 @@ git add <file>
 git commit -m "message"
 git push origin main
 ```
-
-
-[staged-unstaged-untracked]: /extras/staged-unstaged-untracked
