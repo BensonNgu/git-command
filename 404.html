@@ -4,22 +4,49 @@ layout: page
 ---
 
 <style type="text/css" media="screen">
+
   .container {
-    margin: 10px auto;
-    max-width: 600px;
     text-align: center;
+    padding: 2rem;
   }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
+
+  .container h1 {
+    font-size: 6rem;
+    margin: 0;
+    color: var(--accent);
+  }
+
+  .container p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  .container a.home-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+  }
+
+  .container a.home-btn:hover {
+    background: var(--accent-600);
+  }
+
+  .container .illustration {
+    font-size: 4rem;
+    margin-bottom: 1rem;
   }
 </style>
 
 <div class="container">
+  <div class="illustration">🚧</div>
   <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <p><strong>Oops! Page not found.</strong></p>
+  <p>Looks like the page you’re trying to access doesn’t exist or has been moved.</p>
+  <a href="{{ '/' | relative_url }}" class="home-btn">Go Back Home</a>
 </div>
