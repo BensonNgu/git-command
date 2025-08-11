@@ -41,4 +41,4 @@ Found something that could be improved? Contributions are welcome!
 ---
 
 **Maintained by:** [{{ site.github.owner_name }}](https://github.com/{{ site.github.owner_username }})  
-**Repository:** [{{ site.github.repository_url | default: "https://github.com/" | append: site.github.owner_username | append: "/git-command" }}](https://github.com/{{ site.github.owner_username }}/git-command)
+**Repository:** [{{ site.github.repository_url }}](https://github.com/{{ site.github.owner_username }}/git-command)
