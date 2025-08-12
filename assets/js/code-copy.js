@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
           button.className = "copy-btn";
           button.type = "button";
 
-          const clipboardIcon = `<img src="/git-command/assets/icons/clipboard.svg" alt="Copy" width="24" height="24">`;
-          const checkIcon = `<img src="/git-command/assets/icons/clipboard-check.svg" alt="Copied" width="24" height="24">`; // you'll need a check.svg too
+          const clipboardIcon = `<img src="/assets/icons/clipboard.svg" alt="Copy" width="24" height="24">`;
+          const checkIcon = `<img src="/assets/icons/clipboard-check.svg" alt="Copied" width="24" height="24">`; // you'll need a check.svg too
 
 
           button.innerHTML = clipboardIcon;
