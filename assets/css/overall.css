@@ -8,3 +8,58 @@ a {
 a:hover {
      color: var(--link-hover);
 }
+
+
+/* ===== Base font size for smallest screens (mobile) ===== */
+html {
+    font-size: 13px; /* smaller base on mobile */
+}
+
+body {
+    font-size: 1rem;  /* equals 13px here */
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+/* Headings - mobile defaults */
+h1 { font-size: 1.75rem; }  /* ~22.75px */
+h2 { font-size: 1.5rem; }   /* ~19.5px */
+h3 { font-size: 1.25rem; }  /* ~16.25px */
+h4 { font-size: 1.125rem; } /* ~14.625px */
+h5 { font-size: 1rem; }     /* 13px */
+h6 { font-size: 0.875rem; } /* ~11.375px */
+p  { font-size: 1rem; }     /* 13px */
+code { font-size: 1rem;}
+
+/* ===== Tablet (>=640px) ===== */
+@media (min-width: 640px) {
+    html {
+        font-size: 14px; /* slightly bigger base */
+    }
+
+    h1 { font-size: 2rem; }    /* 28px */
+    h2 { font-size: 1.75rem; } /* 24.5px */
+    h3 { font-size: 1.5rem; }  /* 21px */
+    h4 { font-size: 1.25rem; } /* 17.5px */
+    h5 { font-size: 1.125rem; }/* 15.75px */
+    h6 { font-size: 1rem; }    /* 14px */
+    p  { font-size: 1rem; }    /* 14px */
+    code  { font-size: 1rem; }    /* 14px */
+}
+
+/* ===== Desktop (>=1024px) ===== */
+@media (min-width: 1024px) {
+    html {
+        font-size: 15px; /* modest desktop base */
+    }
+
+    h1 { font-size: 2.25rem; } /* 33.75px */
+    h2 { font-size: 2rem; }    /* 30px */
+    h3 { font-size: 1.75rem; } /* 26.25px */
+    h4 { font-size: 1.5rem; }  /* 22.5px */
+    h5 { font-size: 1.25rem; } /* 18.75px */
+    h6 { font-size: 1.125rem; }/* 16.875px */
+    p  { font-size: 1.0625rem; }/* ~15.94px */
+    code  { font-size: 1.0625rem; }/* ~15.94px */
+}

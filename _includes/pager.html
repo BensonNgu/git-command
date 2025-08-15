@@ -1,0 +1,71 @@
+{%- comment -%}
+Renders Prev / Home / Next buttons based on /_data/nav.yml order.
+Skips the section titled "Navigation".
+Usage: {% include pager.html %}
+{%- endcomment -%}
+
+{%- assign sections = site.data.nav | where_exp: "s", "s.title != 'Navigation'" -%}
+
+{%- assign flat = "" | split: "" -%}
+{%- for s in sections -%}
+  {%- for it in s.items -%}
+    {%- assign flat = flat | push: it -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+{%- comment -%} normalize current path {%- endcomment -%}
+{%- assign here = page.url | replace: site.baseurl, "" -%}
+<script>
+     console.log("Current path: {{ here }}");
+</script>
+
+
+{%- assign idx = -1 -%}
+{%- for i in (0..flat.size) -%}
+  {%- assign item = flat[i] -%}
+  {%- if item -%}
+    {%- assign u = item.url -%}
+    {%- if u == here -%}{% assign idx = i %}{% break %}{% endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign prev = nil -%}
+{%- assign next = nil -%}
+{%- if idx > 0 -%}
+     {% assign prevIdx = idx | minus: 1 -%}
+{%- endif -%}
+{%- if idx > -1 -%}
+     {% assign nextIdx = idx | plus: 1 -%}
+{%- endif -%}
+
+{%- for i in (0..flat.size) -%}
+     {%- assign item = flat[i] -%}
+     {%- if item -%}
+     {%- if i == prevIdx -%}
+          {% assign prev = item %}
+     {%- elsif i == nextIdx -%}
+          {% assign next = item %}
+     {%- endif -%}
+     {%- endif -%}
+     
+{%- endfor -%}
+
+
+
+<div class="chapter-nav">
+  <div class="chapter-nav__left">
+    {%- if prev -%}
+      <a class="btn" href="{{ prev.url | relative_url }}" aria-label="Previous chapter">← {{ prev.label }}</a>
+    {%- endif -%}
+  </div>
+
+  <div class="chapter-nav__center">
+    <a class="btn btn--ghost" href="{{ '/' | relative_url }}" aria-label="Main page">Main Page</a>
+  </div>
+
+  <div class="chapter-nav__right">
+    {%- if next -%}
+      <a class="btn" href="{{ next.url | relative_url }}" aria-label="Next chapter">{{ next.label }} →</a>
+    {%- endif -%}
+  </div>
+</div>

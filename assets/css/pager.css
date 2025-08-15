@@ -1,0 +1,49 @@
+.chapter-nav {
+     display: grid;
+     grid-template-columns: 1fr auto 1fr;
+     gap: .75rem;
+     align-items: center;
+     margin: 2rem 0 1rem;
+}
+
+.chapter-nav__left {
+     justify-self: start
+}
+
+.chapter-nav__center {
+     justify-self: center
+}
+
+.chapter-nav__right {
+     justify-self: end
+}
+
+.btn {
+     display: inline-block;
+     padding: .5rem .9rem;
+     border-radius: 10px;
+     background: var(--accent);
+     color: #fff;
+     text-decoration: none;
+     border: 1px solid var(--accent-600);
+     transition: background .5s ease-in-out, color .2s ease-in-out;
+     font-weight: 600;
+}
+
+.btn:hover {
+     background: var(--accent-600);
+     color: #000;
+}
+
+.btn--ghost {
+     background: var(--panel);
+     color: var(--text);
+     border: 1px solid var(--panel-border);
+     transition: background .5s ease-in-out, color .2s ease-in-out, border-color .5s ease-in-out;
+}
+
+.btn--ghost:hover {
+     background: var(--accent-50);
+     border-color: var(--accent);
+     color: var(--panel);
+}

@@ -33,3 +33,9 @@
   font-style: italic;
   color: var(--muted);
 }
+
+.footer-links img#footerBoyIcon {
+  background-color: var(--text);
+  border-radius: 50%;
+  padding: auto;
+}

@@ -18,9 +18,14 @@
     </p>
 
     <p class="footer-links">
-      🌐 <a target="_blank" href="{{ site.github.owner_website | default: site.baseurl }}">Website</a> |
-      💻 <a target="_blank" href="https://github.com/{{ site.github_username }}">GitHub</a>
+      <a target="_blank" href="{{ site.github.owner_website | default: site.baseurl }}"><img src="/assets/icons/boy.png" width="30" id="footerBoyIcon" alt="My Portfolio"/></a>
+      <a target="_blank" href="https://github.com/{{ site.github_username }}"><img src="/assets/icons/github.png" width="30" id="footerGithubLogo" alt="My GitHub"/></a>
     </p>
+
+    <a class="footer__cta" href="https://www.buymeacoffee.com/bensonngu2q">
+      <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=bensonngu2q&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"
+                                                                                                          alt="Buy me a coffee">
+    </a>
 
     <p class="footer-owner">
       &copy; {{ "now" | date: "%Y" }} {{ site.github.owner_name | default: site.github_username }}

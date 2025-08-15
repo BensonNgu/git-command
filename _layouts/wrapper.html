@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="{{ "/assets/css/code-copy.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/overall.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/theme.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/pager.css" | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap"
@@ -57,7 +58,7 @@
 
         body {
             margin: 0;
-            font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            font: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
             color: var(--text);
             background: var(--bg);
         }
@@ -70,7 +71,7 @@
 
         .page {
             max-width: 1000px;
-            min-height: 100vh;
+            min-height: 85vh;
             margin: 0 auto;
             padding: 1.25rem 1.5rem;
             /* reserve right gutter on desktop */
@@ -88,6 +89,14 @@
     </main>
 
     {% include footer.html %}
+
+    <script>
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const footerGithubLogo = document.getElementById('footerGithubLogo');
+        if (prefersDark) {
+            if(footerGithubLogo) footerGithubLogo.src = '/assets/icons/github-dark.png';
+        }
+    </script>
 </body>
 
 </html>
