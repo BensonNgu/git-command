@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
           button.className = "copy-btn";
           button.type = "button";
 
+
           const clipboardIcon = `<img src="/assets/icons/clipboard.svg" alt="Copy" >`;
           const checkIcon = `<img src="/assets/icons/clipboard-check.svg" alt="Copied" >`; // you'll need a check.svg too
 
