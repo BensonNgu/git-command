@@ -95,6 +95,35 @@ Changes to be committed:
 git commit -m "Update file.txt"
 ```
 
+### 📁 Special Cases: Excluding Files During git add
+
+When staging multiple files or entire directories, you can exclude specific files or folders on the fly using pathspec magic syntax, without modifying .gitignore.
+
+#### 1. Exclude Files Using :(exclude) or `!:`
+
+You can prevent specific files or directories from being added by using either of these patterns:
+
+✅ Exclude a file:
+
+```bash
+git add . ':!path/to/excluded_file.txt'
+```
+
+✅ Exclude a directory:
+
+```bash
+git add . ':!path/to/excluded_directory/'
+```
+
+This tells Git: “Stage all changes from the current directory (.) except the explicitly excluded file or folder.”
+
+📝 Notes:
+
+* The quotes are required to prevent shell expansion.
+* This does not modify .gitignore, making it ideal for temporary/manual exclusions.
+
+📌 Reference: This feature uses Git's pathspec magic for on-the-fly control during staging.
+
 ---
 
 ### 🧠 Summary Table
