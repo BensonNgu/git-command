@@ -13,15 +13,15 @@
 
      --button-bg: var(--panel);
      --button-border: var(--border);
-     --button-hover-bg: var(--accent-50);
+     --button-hover-bg: var(--accent);
 
-     --nav-title: var(--muted);
-     --nav-link: var(--text);
+     --nav-title: var(--text);
+     --nav-link: var(--muted);
      --nav-link-hover-bg: var(--accent-50);
      --nav-link-active-bg: var(--accent-100, #e0e7ff);
      /* add accent-100 in theme.css for easy control */
-     --nav-link-active-text: var(--panel);
-     --nav-link-hover-text: var(--panel);
+     --nav-link-active-text: var(--muted);
+     --nav-link-hover-text: var(--muted);
 }
 
 /* Header */
@@ -79,6 +79,10 @@ body.nav-open .sidebar-backdrop {
      z-index: 40;
 }
 
+.sidebar .nav {
+     padding-top: 2.75rem;
+}
+
 body.nav-open .sidebar {
      right: 0;
 }
@@ -128,6 +132,7 @@ main.page {
 
 .nav-sec-toggle:hover {
      background: var(--button-hover-bg);
+     color: var(--header-text);
 }
 
 .nav-sec-toggle .chev {
@@ -165,7 +170,7 @@ main.page {
 
 .nav-link.is-active {
      background: var(--nav-link-active-bg);
-     font-weight: 600;
+     font-weight: 500;
      color: var(--nav-link-active-text);
 }
 

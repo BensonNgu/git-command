@@ -1,16 +1,28 @@
-pre {
+.code-block {
      position: relative;
+     margin: 1rem 0;
+}
+
+.code-block pre {
      background-color: var(--code-bg);
-     /* from theme.css */
      color: var(--text);
+
      padding: 8px;
-     border-radius: 6px;
-     min-height: 1.5rem;
+     padding-right: 3rem;
+
      border: 1px solid var(--code-border);
+     border-radius: 6px;
+
+     min-height: 1.5rem;
+
+     /* code stays on one line */
+     white-space: pre;
+
+     /* only code scrolls */
      overflow-x: auto;
 }
 
-code {
+.code-block code {
      font-family: "Google Sans Code", monospace;
 }
 
@@ -18,18 +30,26 @@ code {
      position: absolute;
      top: 6px;
      right: 6px;
-     background: var(--muted);
+
+     z-index: 2;
+
+     background: var(--border);
      border: 1px solid var(--border);
      border-radius: 6px;
+
      padding: 2px;
-     margin-bottom: 5px;
      cursor: pointer;
+
      color: var(--muted);
-     transition: all 0.2s ease;
+
      display: flex;
      align-items: center;
      justify-content: center;
-     transition: background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+
+     transition:
+          background 0.5s ease,
+          color 0.5s ease,
+          border-color 0.5s ease;
 }
 
 .copy-btn:hover {
@@ -38,22 +58,7 @@ code {
      border-color: var(--accent-600);
 }
 
-.copy-btn img {
+.copy-btn svg {
      width: 1.4rem;
      height: 1.4rem;
-}
-
-@media (min-width: 640px) {
-     .copy-btn img {
-          width: 1.5rem;
-          height: 1.5rem;
-     }
-}
-
-/* ===== Desktop (>=1024px) ===== */
-@media (min-width: 1024px) {
-     .copy-btn img {
-          width: 1.6rem;
-          height: 1.6rem;
-     }
 }

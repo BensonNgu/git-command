@@ -1,65 +1,207 @@
 a {
-     font-family: Arial, sans-serif;
-     line-height: 1.6;
-     color: var(--link);
-     text-decoration: none;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--link);
+    text-decoration: none;
 }
 
 a:hover {
-     color: var(--link-hover);
+    color: var(--link-hover);
 }
 
 
 /* ===== Base font size for smallest screens (mobile) ===== */
 html {
-    font-size: 13px; /* smaller base on mobile */
+    font-size: 13px;
+    /* smaller base on mobile */
 }
 
 body {
-    font-size: 1rem;  /* equals 13px here */
+    font-size: 1rem;
+    /* equals 13px here */
     line-height: 1.5;
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
 }
 
 /* Headings - mobile defaults */
-h1 { font-size: 1.75rem; }  /* ~22.75px */
-h2 { font-size: 1.5rem; }   /* ~19.5px */
-h3 { font-size: 1.25rem; }  /* ~16.25px */
-h4 { font-size: 1.125rem; } /* ~14.625px */
-h5 { font-size: 1rem; }     /* 13px */
-h6 { font-size: 0.875rem; } /* ~11.375px */
-p  { font-size: 1rem; }     /* 13px */
-code { font-size: 1rem;}
+h1 {
+    font-size: 1.75rem;
+}
+
+/* ~22.75px */
+h2 {
+    font-size: 1.5rem;
+}
+
+/* ~19.5px */
+h3 {
+    font-size: 1.25rem;
+}
+
+/* ~16.25px */
+h4 {
+    font-size: 1.125rem;
+}
+
+/* ~14.625px */
+h5 {
+    font-size: 1rem;
+}
+
+/* 13px */
+h6 {
+    font-size: 0.875rem;
+}
+
+/* ~11.375px */
+p {
+    font-size: 1rem;
+}
+
+/* 13px */
+code {
+    font-size: 1rem;
+}
+
+
+:not(pre)>code {
+    font-family: "Google Sans Code", monospace;
+
+    background: var(--accent-50);
+    color: var(--accent-600);
+
+    padding: 0.1rem 0.35rem;
+    border: 1px solid var(--code-border);
+    border-radius: 4px;
+
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 /* ===== Tablet (>=640px) ===== */
 @media (min-width: 640px) {
     html {
-        font-size: 14px; /* slightly bigger base */
+        font-size: 14px;
+        /* slightly bigger base */
     }
 
-    h1 { font-size: 2rem; }    /* 28px */
-    h2 { font-size: 1.75rem; } /* 24.5px */
-    h3 { font-size: 1.5rem; }  /* 21px */
-    h4 { font-size: 1.25rem; } /* 17.5px */
-    h5 { font-size: 1.125rem; }/* 15.75px */
-    h6 { font-size: 1rem; }    /* 14px */
-    p  { font-size: 1rem; }    /* 14px */
-    code  { font-size: 1rem; }    /* 14px */
+    h1 {
+        font-size: 2rem;
+    }
+
+    /* 28px */
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    /* 24.5px */
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* 21px */
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    /* 17.5px */
+    h5 {
+        font-size: 1.125rem;
+    }
+
+    /* 15.75px */
+    h6 {
+        font-size: 1rem;
+    }
+
+    /* 14px */
+    p {
+        font-size: 1rem;
+    }
+
+    /* 14px */
+    code {
+        font-size: 1rem;
+    }
+
+    /* 14px */
 }
 
 /* ===== Desktop (>=1024px) ===== */
 @media (min-width: 1024px) {
     html {
-        font-size: 15px; /* modest desktop base */
+        font-size: 15px;
+        /* modest desktop base */
     }
 
-    h1 { font-size: 2.25rem; } /* 33.75px */
-    h2 { font-size: 2rem; }    /* 30px */
-    h3 { font-size: 1.75rem; } /* 26.25px */
-    h4 { font-size: 1.5rem; }  /* 22.5px */
-    h5 { font-size: 1.25rem; } /* 18.75px */
-    h6 { font-size: 1.125rem; }/* 16.875px */
-    p  { font-size: 1.0625rem; }/* ~15.94px */
-    code  { font-size: 1.0625rem; }/* ~15.94px */
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    /* 33.75px */
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* 30px */
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    /* 26.25px */
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    /* 22.5px */
+    h5 {
+        font-size: 1.25rem;
+    }
+
+    /* 18.75px */
+    h6 {
+        font-size: 1.125rem;
+    }
+
+    /* 16.875px */
+    p {
+        font-size: 1.0625rem;
+    }
+
+    /* ~15.94px */
+    code {
+        font-size: 1.0625rem;
+    }
+
+    /* ~15.94px */
+}
+
+/* ===== Scro ===== */
+::-webkit-scrollbar {
+    height: 0.7rem;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--code-bg);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--muted);
+    border-radius: 999px;
+    border: 2px solid var(--code-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
 }

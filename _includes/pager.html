@@ -1,71 +1,98 @@
-{%- comment -%}
-Renders Prev / Home / Next buttons based on /_data/nav.yml order.
-Skips the section titled "Navigation".
-Usage: {% include pager.html %}
-{%- endcomment -%}
-
-{%- assign sections = site.data.nav | where_exp: "s", "s.title != 'Navigation'" -%}
-
-{%- assign flat = "" | split: "" -%}
-{%- for s in sections -%}
-  {%- for it in s.items -%}
-    {%- assign flat = flat | push: it -%}
-  {%- endfor -%}
-{%- endfor -%}
-
-{%- comment -%} normalize current path {%- endcomment -%}
-{%- assign here = page.url | replace: site.baseurl, "" -%}
+{%- comment -%} Renders Prev / Home / Next buttons based on /_data/nav.yml
+order. Skips the section titled "Navigation". Usage: {% include pager.html %}
+{%- endcomment -%} {%- assign sections = site.data.nav | where_exp: "s",
+"s.title != 'Navigation'" -%} {%- assign flat = "" | split: "" -%} {%- for s in
+sections -%} {%- for it in s.items -%} {%- assign flat = flat | push: it -%} {%-
+endfor -%} {%- endfor -%} {%- comment -%} normalize current path {%- endcomment
+-%} {%- assign here = page.url | replace: site.baseurl, "" -%}
 <script>
-     console.log("Current path: {{ here }}");
+  console.log("Current path: {{ here }}");
 </script>
 
-
-{%- assign idx = -1 -%}
-{%- for i in (0..flat.size) -%}
-  {%- assign item = flat[i] -%}
-  {%- if item -%}
-    {%- assign u = item.url -%}
-    {%- if u == here -%}{% assign idx = i %}{% break %}{% endif -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{%- assign prev = nil -%}
-{%- assign next = nil -%}
-{%- if idx > 0 -%}
-     {% assign prevIdx = idx | minus: 1 -%}
-{%- endif -%}
-{%- if idx > -1 -%}
-     {% assign nextIdx = idx | plus: 1 -%}
-{%- endif -%}
-
-{%- for i in (0..flat.size) -%}
-     {%- assign item = flat[i] -%}
-     {%- if item -%}
-     {%- if i == prevIdx -%}
-          {% assign prev = item %}
-     {%- elsif i == nextIdx -%}
-          {% assign next = item %}
-     {%- endif -%}
-     {%- endif -%}
-     
-{%- endfor -%}
-
-
+{%- assign idx = -1 -%} {%- for i in (0..flat.size) -%} {%- assign item =
+flat[i] -%} {%- if item -%} {%- assign u = item.url -%} {%- if u == here -%}{%
+assign idx = i %}{% break %}{% endif -%} {%- endif -%} {%- endfor -%} {%- assign
+prev = nil -%} {%- assign next = nil -%} {%- if idx > 0 -%} {% assign prevIdx =
+idx | minus: 1 -%} {%- endif -%} {%- if idx > -1 -%} {% assign nextIdx = idx |
+plus: 1 -%} {%- endif -%} {%- for i in (0..flat.size) -%} {%- assign item =
+flat[i] -%} {%- if item -%} {%- if i == prevIdx -%} {% assign prev = item %} {%-
+elsif i == nextIdx -%} {% assign next = item %} {%- endif -%} {%- endif -%} {%-
+endfor -%}
 
 <div class="chapter-nav">
   <div class="chapter-nav__left">
     {%- if prev -%}
-      <a class="btn" href="{{ prev.url | relative_url }}" aria-label="Previous chapter">← {{ prev.label }}</a>
+    <a
+      class="btn"
+      href="{{ prev.url | relative_url }}"
+      aria-label="Previous chapter"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+        />
+      </svg>
+      {{ prev.label }}
+    </a>
     {%- endif -%}
   </div>
 
   <div class="chapter-nav__center">
-    <a class="btn btn--ghost" href="{{ '/' | relative_url }}" aria-label="Main page">Main Page</a>
+    <a
+      class="btn btn--ghost"
+      href="{{ '/' | relative_url }}"
+      aria-label="Main page"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+        />
+      </svg>
+      Main Page
+    </a>
   </div>
 
   <div class="chapter-nav__right">
     {%- if next -%}
-      <a class="btn" href="{{ next.url | relative_url }}" aria-label="Next chapter">{{ next.label }} →</a>
+    <a
+      class="btn"
+      href="{{ next.url | relative_url }}"
+      aria-label="Next chapter"
+    >
+      {{ next.label }}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="icon"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+        />
+      </svg>
+    </a>
     {%- endif -%}
   </div>
 </div>
